@@ -34,3 +34,12 @@ function displayCourses(courses) {
         courseList.appendChild(subjectList);
     });
 }
+    function searchCourses() {
+        let input = document.getElementById("searchCourse").value.toLowerCase();
+        let courses = document.querySelectorAll(".activity-card");
+
+        courses.forEach(course => {
+            let text = course.innerText.toLowerCase();
+            course.style.display = text.includes(input) ? "block" : "none";
+        });
+    }

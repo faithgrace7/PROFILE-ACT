@@ -28,7 +28,6 @@
         <!-- Right Section -->
         <div class="right">
             <h1>Faith's Portfolio</h1>
-            <p>Welcome to my digital space where I showcase my skills, experiences, and projects.</p>
 
             <div id="about" class="section">
                 <h2>About Me</h2>
@@ -52,19 +51,30 @@
     </div>
 
     <!-- My Finished Courses Section -->
-    <section id="courses" class="activities-box">
-        <h2 class="activities-title">My Finished Courses</h2>
-        <ul id="course-list" class="activities-container">
-            <li class="activity-card">Loading courses...</li>
-        </ul>
-    </section>
+        <h2>My Finished Courses</h2>
+    
+        <input type="text" id="search-bar" placeholder="Search for a course..." />
+    
+        <div class="course-container" id="course-list">
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function searchCourses() {
+            let input = document.getElementById("searchCourse").value.toLowerCase();
+            let courses = document.querySelectorAll(".activity-card");
+
+            courses.forEach(course => {
+                let text = course.innerText.toLowerCase();
+                course.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
 
 </body>
 </html>
