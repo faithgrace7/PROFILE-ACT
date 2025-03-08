@@ -51,30 +51,19 @@
     </div>
 
     <!-- My Finished Courses Section -->
-        <h2>My Finished Courses</h2>
-    
-        <input type="text" id="search-bar" placeholder="Search for a course..." />
-    
-        <div class="course-container" id="course-list">
-        </div>
-    </div>
+    <section id="courses" class="activities-box">
+        <h2 class="activities-title">My Finished Courses</h2>
+        <ul id="course-list" class="activities-container">
+            <li class="activity-card">Loading courses...</li>
+        </ul>
+    </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; All rights reserved.</p>
     </footer>
 
-    <script>
-        function searchCourses() {
-            let input = document.getElementById("searchCourse").value.toLowerCase();
-            let courses = document.querySelectorAll(".activity-card");
-
-            courses.forEach(course => {
-                let text = course.innerText.toLowerCase();
-                course.style.display = text.includes(input) ? "block" : "none";
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
